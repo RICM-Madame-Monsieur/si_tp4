@@ -30,7 +30,7 @@ void main()
 
 //  vert_color = vec3(1.0, 0.0, 0.0);
   // vert_color = 0.5 * (vec3(1.0) + in_normal);
-  vert_color = vec3(pa * la + pd * ld * dot(-in_normal, sun));
+  vert_color = vec3(pa * la + pd * ld * dot(-in_normal, normalize(sun)));
   vert_normal = (transpose(inverse(ModelMatrix)) * vec4(in_normal, 0.0)).xyz;
 //  vert_color = gl_Position.xyz;
 }
